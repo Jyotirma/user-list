@@ -1,0 +1,50 @@
+.tableCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tableBody {
+    padding: 30px;
+    /* border-collapse: collapse; */
+}
+
+.tableBody th {
+    /* display: block; */
+    /* padding: 10px;
+    margin: 10px; */
+    padding: 12px;
+    /* padding-bottom: 12px; */
+    text-align: center;
+    background-color: #642688;
+    color: white;
+}
+
+tbody tr {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+tbody td {
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #642688;
+    /* font-size: larger; */
+    text-align: center;
+    margin: 20px;
+
+}
+
+button {
+    padding: 10px;
+    background-color: rgb(150, 31, 31);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

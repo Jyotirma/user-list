@@ -1,0 +1,85 @@
+<app-nav [showButtons]="showButtons"></app-nav>
+<div class="wrapper">
+    <h2>Add New User</h2>
+    <h3 *ngIf="submitted">User Added Successfully!</h3>
+    <form #registerForm="ngForm" (ngSubmit)=onAdd(registerForm)>
+        <div class="input-box form-group">
+            <input type="text" placeholder="User ID" name="userid" required ngModel #userIdInput="ngModel" minlength="6"
+                maxlength="10">
+            <div *ngIf=" userIdInput && userIdInput.invalid && (userIdInput.dirty || userIdInput.touched)"
+                class="alert">
+                <div *ngIf="userIdInput.errors?.['required']">User ID is required.</div>
+                <!-- <div *ngIf="userIdInput.errors?.['pattern']">User ID must contain both letters and numbers.</div> -->
+                <div *ngIf="userIdInput.errors?.['minlength']">Password must be at least 6 characters long.</div>
+                <div *ngIf="userIdInput.errors?.['maxlength']">Password cannot exceed 20 characters.</div>
+            </div>
+        </div>
+        <div class="input-box form-group">
+            <input type="password" placeholder="Create a Password" name="password" required ngModel
+                #passwordInput="ngModel" minlength="4" maxlength="8">
+            <div *ngIf=" passwordInput && passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)"
+                class="alert">
+                <div *ngIf="passwordInput.errors?.['required']">Password is required.</div>
+                <!-- <div *ngIf="userIdInput.errors?.['pattern']">User ID must contain both letters and numbers.</div> -->
+                <div *ngIf="passwordInput.errors?.['minlength']">User ID must be at least 4 characters long.</div>
+                <div *ngIf="passwordInput.errors?.['maxlength']">User ID cannot exceed 8 characters.</div>
+            </div>
+        </div>
+        <div class="input-box form-group">
+            <input type="text" placeholder="First Name" name="fName" required ngModel #fname="ngModel">
+            <div *ngIf="fname.invalid && (fname.dirty || fname.touched)" class="alert">
+
+                <div *ngIf="fname.errors?.['required']">
+                    First Name is required.
+                </div>
+            </div>
+        </div>
+        <div class="input-box form-group">
+            <input type="text" placeholder="Last name" name="lName" ngModel #lname="ngModel">
+            <div *ngIf="lname.invalid && (lname.dirty || lname.touched)" class="alert">
+
+                <div *ngIf="lname.errors?.['required']">
+                    Last Name is required.
+                </div>
+            </div>
+        </div>
+        <div class="input-box form-group">
+            <input type="text" placeholder="Friendly Name" name="nickName" ngModel>
+        </div>
+        <div class="input-box form-group">
+            <input type="email" placeholder="Email ID" name="email" ngModel #emailInput="ngModel" required email>
+            <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="alert">
+                <div *ngIf="emailInput.errors?.['required']">Email is required.</div>
+                <div *ngIf="emailInput.errors?.['email']">Invalid email format.</div>
+            </div>
+        </div>
+        <div class="input-box form-group">
+            <input type="number" placeholder="Phone Number" name="phone" required ngModel #phoneNumberInput="ngModel"
+                pattern="^[0-9]{10}$">
+            <div *ngIf="phoneNumberInput.invalid && (phoneNumberInput.dirty || phoneNumberInput.touched)" class="alert">
+                <div *ngIf="phoneNumberInput.errors?.['required']">Phone Number is required.</div>
+                <div *ngIf="phoneNumberInput.errors?.['pattern']">Phone Number must be 10 digits long </div>
+            </div>
+        </div>
+        <div class="dropdown form-group">
+            <label for="userType">User Type:</label>
+            <select name="userType" ngModel #userTypeInput="ngModel" required>
+                <option value="Admin">Admin</option>
+                <option value="Governor">Governor</option>
+                <option value="UserManager">UserManager</option>
+                <option value="Producer">Producer</option>
+                <option value="Consumer">Consumer</option>
+            </select>
+            <div *ngIf="userTypeInput.invalid && (userTypeInput.dirty || userTypeInput.touched)" class="alert">
+                <div *ngIf="userTypeInput.errors?.['required']">User Type is required.</div>
+            </div>
+        </div>
+        <div class="check-box form-check">
+            <input type="checkbox" name="active" value="user" name="checked" ngModel>
+            <label for="active"> Is Active</label>
+        </div>
+        <div>
+            <button class="btn">Add</button>
+        </div>
+    </form>
+</div>

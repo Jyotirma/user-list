@@ -1,0 +1,17 @@
+<div class="cont">
+    <div class="formCont">
+        <h1>InfoTech</h1>
+        <form #loginForm="ngForm" (ngSubmit)=onSubmit(loginForm)>
+            <div class="username text_field">
+                <input type="text" placeholder="User id" name="username" ngModel required>
+            </div>
+            <div class="pass text_field">
+                <input type="password" placeholder="Password" name="password" ngModel required>
+            </div>
+            <button class="btn"> Log In</button>
+        </form>
+        <div *ngIf="errorMessage" class="alertMsg">
+            {{ errorMessage }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+.userCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40vw;
+    padding: 30px;
+    margin: 50px auto;
+    background-image: linear-gradient(to right top, #8134ea, #9959e5, #ad79e1, #bc99dc, #c9b8d6);
+    border-radius: 10px;
+}
+
+h2,
+h3 {
+    color: white;
+    /* color: rgb(57, 22, 180); */
+    text-align: center;
+    margin: 10px;
+}
+
+p {
+    color: white;
+    text-align: center;
+}
+
+img {
+    width: 80px;
+    height: 80px;
+}
+
+button {
+    background-color: rgb(63, 8, 114);
+    color: white;
+    padding: 8px;
+    margin: 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    height: 40px;
+    width: 80px;
+}

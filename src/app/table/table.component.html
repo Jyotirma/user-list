@@ -1,0 +1,35 @@
+<!-- <app-nav [showButtons]="showButtons"></app-nav> -->
+<div class="tableCont">
+
+    <h1>User List</h1>
+    <table class="tableBody">
+        <thead>
+            <tr>
+                <th>Sl. NO</th>
+                <th>User Id</th>
+                <th>Name</th>
+                <th>Friendly Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>User Type</th>
+                <th>Is Active</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let detail of arr; let sn = index">
+                <td>{{ sn+1 }}</td>
+                <td>{{ detail.userid}}</td>
+                <td>{{ detail.fName }} {{detail.lname}}</td>
+                <td>{{ detail.nickName }}</td>
+                <td>{{ detail.phone }}</td>
+                <td>{{ detail.email }}</td>
+                <td>{{ detail.userType }}</td>
+                <td>{{ detail.active }}</td>
+                <td>
+                    <button (click)="onDelete(sn)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

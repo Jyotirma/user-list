@@ -1,0 +1,19 @@
+<div class="nav">
+    <div class="left">
+        <h2>InfoTech</h2>
+    </div>
+    <div class="right">
+        <ul *ngIf="showButtons === 1">
+            <li><a routerLink="/">Logout</a></li>
+        </ul>
+        <ul *ngIf="showButtons === 3">
+            <li><a routerLink="/barchart">Bar Chart</a></li>
+            <li><a routerLink="/home">User List</a></li>
+            <li><a routerLink="/register">Add User</a></li>
+            <li><a routerLink="/">Logout</a></li>
+        </ul>
+    </div>
+
+
+
+</div>
